@@ -1,0 +1,16 @@
+{
+  "lamda_service_name": "alb-parser",
+  "region": "us-east-2",
+  "alb_logs_source_s3_bucket_path": "{bucket-name}/AWSLogs/{accound-id}/elasticloadbalancing",
+  "alb_logs_destination_s3_bucket_name": "alb-parser-logs",
+  "alb_logs_destination_s3_bucket_prefix": "ALBLogs",
+  "athena_db_name": "logs",
+  "athena_table_name": "alb_logs",
+  "athena_table_creation_logs_s3_path": "athena/table_creation_logs",
+  "athena_disk_repair_logs_s3_path": "athena/disk_repair_logs",
+  "athena_query_execution_logs_s3_path": "athena/query_execution_logs",
+  "athena_query_execution_time_s3_key": "athena/last_query_execution_time",
+  "athena_is_db_created_s3_key": "athena/is_db_created",
+  "logzio_url": "https://listener.logz.io:8071",
+  "logzio_token": "xxxxxxxxxxxxxxxxxxx"
+}

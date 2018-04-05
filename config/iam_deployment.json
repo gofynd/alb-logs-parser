@@ -1,0 +1,95 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::*alb-parser*",
+                "arn:aws:s3:::*alb-parser*/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:ListTags",
+                "lambda:TagResource",
+                "lambda:UntagResource",
+                "lambda:List*",
+                "lambda:Update*",
+                "lambda:AddPermission",
+                "lambda:PublishVersion",
+                "lambda:RemovePermission",
+                "lambda:CreateAlias",
+                "lambda:InvokeFunction",
+                "lambda:DeleteFunction",
+                "lambda:Get*",
+                "lambda:CreateFunction"
+            ],
+            "Resource": "arn:aws:lambda:*:*:function:alb-parser*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "events:Put*",
+                "events:DescribeRule",
+                "events:Delete*",
+                "events:Remove*"
+            ],
+            "Resource": "arn:aws:events:*:*:rule/alb-parser*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:DescribeLogGroups",
+                "logs:DeleteLogGroup",
+                "logs:DescribeLogStreams",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:us-east-2:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:Describe*",
+                "cloudformation:List*",
+                "cloudformation:Get*",
+                "cloudformation:PreviewStackUpdate",
+                "cloudformation:ValidateTemplate",
+                "cloudformation:ContinueUpdateRollback"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:UpdateStack",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:ValidateTemplate",
+                "cloudformation:Get*",
+                "cloudformation:Describe*",
+                "cloudformation:List*",
+                "cloudformation:PreviewStackUpdate"
+            ],
+            "Resource": "arn:aws:cloudformation:*:*:stack/alb-parser*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetRole",
+                "iam:PassRole"
+            ],
+            "Resource": "arn:aws:iam::*:role/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:*",
+            "Resource": [
+                "arn:aws:iam::*:role/alb-parser*"
+            ]
+        }
+    ]
+}
